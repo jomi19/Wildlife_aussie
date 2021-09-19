@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.outer-main {
+  width: 100%;
+}
+
+.outer-footer {
+  width: 100%;
+  background-color: darken(grey, 20%);
+  min-height: 20vh;
+}
+
+.inner-main-content {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 20vh;
+}
+
+.main-content:nth-child(even) {
+  background-color: darken(white, 10%);
+}
+
+.testar {
+  width: 400px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Merienda", cursive;
+}

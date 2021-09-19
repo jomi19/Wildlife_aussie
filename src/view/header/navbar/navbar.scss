@@ -1,0 +1,71 @@
+.inner-navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  transform: translateY(-50%);
+
+  margin: 0 1em;
+  margin-top: var(--centertop);
+  font-size: 1.5em;
+  display: flex;
+  font-weight: bolder;
+  color: #ffff;
+}
+
+.active {
+  color: black;
+}
+
+.active::before {
+  content: "";
+  display: block;
+  background-size: cover;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: 0.4em;
+  left: -0.9em;
+  height: 45px;
+  width: 45px;
+  background-image: url("/style/img/paw.svg");
+}
+
+.dropdown {
+  position: absolute;
+  margin: 0;
+  width: 300px;
+  transform: translateX(-20%);
+  top: 50px;
+  overflow: hidden;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background-color: rgba($color: black, $alpha: 0.2);
+  color: white;
+  padding: 0.2em;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  transition: 100ms;
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 0 0.5em;
+}
+
+.menu-item:hover {
+  background-color: rgba($color: black, $alpha: 0.5);
+}
