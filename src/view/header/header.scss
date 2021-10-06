@@ -33,17 +33,27 @@
   }
 }
 
+.logo {
+  margin-top: var(--centertop);
+  transform: translateY(-50%);
+}
+
 .logo-text {
   font-size: 1.7em;
   color: white;
-  transform: translateY(-50%);
-  margin-top: var(--centertop);
 }
 
 .inner-header {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.logo-img {
+  position: relative;
+  left: 0;
+  width: 150px;
+  top: 30px;
 }
 
 .header-img {
@@ -61,5 +71,26 @@
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
+    z-index: 50;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+@media only screen and (max-width: 750px) {
+  .logo-img {
+    display: none;
+  }
+}
+
+@media only screen and(max-width: 600px) {
+  .logo-img {
+    display: inline-block !important;
+  }
+
+  .outer-header {
+    height: 40vh;
   }
 }

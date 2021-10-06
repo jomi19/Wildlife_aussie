@@ -3,6 +3,7 @@ import "./navbar.scss";
 import { useEffect, useState } from "react";
 import { expandMore } from '@material-ui/icons';
 import axios from "axios";
+import { API_URL} from "./../../../config.json";
 
 
 function checkActive(path, location, subMenu = false) {
@@ -15,7 +16,7 @@ function NavBar(props) {
     const [dogs, setDogs] = useState([])
     const [dropDown, setDropdown] = useState(false);
     useEffect(() => {
-        axios.get("http://localhost:1337/website/menu")
+        axios.get(`${API_URL}website/menu`)
         .then(respons => {
             setDogs(respons.data.menu)
             console.log("getting menu")
@@ -28,11 +29,13 @@ function NavBar(props) {
         <nav className="navbar">
             <ul className="inner-navbar"> 
                 <NavItem to="/" name="Startsida" />
-                <NavItem to="/contact" name="Kontakt"/>
+                
                 <NavItem to="/images" name="Galleri"/>
                 <NavItem name="Hundar" to="#" subMenu="/dogs" open={dropDown} setOpen={setDropdown}>
                     {dropDown && <DropdownMenu dogs={dogs} setOpen={setDropdown} open={dropDown}/> }
                 </NavItem>
+                <NavItem to="/contact" name="Kontakt"/>
+  
             </ul>
 
         </nav>
@@ -42,18 +45,18 @@ function NavBar(props) {
 function NavItem(props) {
     let navClass = "nav-item";
 
-
     if(checkActive(props.to, useLocation().pathname, props.subMenu)) {
         console.log(props.to)
         navClass = navClass + " active";
     }
+
     if(props.setOpen) {
         return(
             <li className={navClass} >
                 <Link  to={props.to} onClick={() => props.setOpen(!props.open)} >{props.name}</Link >
                 {props.open && props.children}
             </li>
-            ); 
+        ); 
     }
     return(
     <li className={navClass} >

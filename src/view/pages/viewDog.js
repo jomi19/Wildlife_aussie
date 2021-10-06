@@ -65,20 +65,21 @@ function ViewDog(props) {
                      
                      <p>{dog.about}</p>
                     </div>
-                   <div className="halfrow" style={{backgroundImage: `url(${IMG_PATH}${dog.images[0].imagePath})`}}> </div>
+                    <div className="halfrow"> <img className="image" src={`${IMG_PATH}${dog.images[0].imagePath}`}></img></div>
+              
                    
                </div>
             </section>
             <section className="main-content ">
                 <div className="inner-main-content halfgrid">
-                   <div className="halfrow" style={{backgroundImage: `url(${IMG_PATH}${dog.images[1].imagePath})`}}></div>
+                   <div className="halfrow" > <img className="image" src={`${IMG_PATH}${dog.images[1].imagePath}`}></img></div>
                    <div className="halfrow"><h1>PRISER</h1> </div>
                </div>
             </section>
             <section className="main-content">
                 <div className="inner-main-content halfgrid">
                    <div className="halfrow"><Radar data={radarData} options={options} /></div>
-                   <div className="halfrow" style={{backgroundImage: `url(${IMG_PATH}${dog.images[2].imagePath})`}}></div>
+                   <div className="halfrow"> <img className="image" src={`${IMG_PATH}${dog.images[2].imagePath}`}></img></div>
                </div>
             </section>
         </div>

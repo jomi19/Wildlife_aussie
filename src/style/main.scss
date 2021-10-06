@@ -8,10 +8,19 @@
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: darken(grey, 20%);
+}
+
+.wrap-all {
+  background-color: white;
 }
 
 .outer-main {
   width: 100%;
+}
+
+.main-content {
+  margin: 1em auto;
 }
 
 .outer-footer {
@@ -23,7 +32,6 @@ body {
 .inner-main-content {
   width: 80%;
   margin: 0 auto;
-  min-height: 20vh;
 }
 
 .main-content:nth-child(even) {
@@ -34,9 +42,34 @@ body {
   width: 400px;
 }
 
+.popUpOpen {
+  overflow: hidden;
+}
+
+.modal-content {
+  width: auto;
+
+  & img {
+    max-height: 80vh;
+  }
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: "Merienda", cursive;
+}
+
+@media only screen and(max-width: 800px) {
+  .inner-main-content {
+    width: 95%;
+  }
+}
+
+@media only screen and(max-width: 600px) {
+  .lock {
+    height: 100%;
+    overflow: hidden;
+  }
 }

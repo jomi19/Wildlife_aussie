@@ -1,13 +1,7 @@
 .halfgrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   padding: 1em;
-}
-
-.gallery {
-  display: flex;
-  overflow: hidden;
-  height: auto;
 }
 
 .img-holder {
@@ -38,4 +32,22 @@ p {
   margin-bottom: 1em;
   border-bottom: 1px dashed grey;
   width: 100%;
+}
+
+.image {
+  max-height: 700px;
+  width: 100%;
+  object-fit: none;
+}
+@media only screen and(max-width: 600px) {
+  .image {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media only screen and(max-width: 1000px) {
+  .halfgrid {
+    grid-template-columns: 1fr;
+  }
 }

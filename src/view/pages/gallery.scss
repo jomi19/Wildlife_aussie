@@ -1,0 +1,23 @@
+.gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
+}
+
+.gallery-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+@media only screen and(max-width: 1200px) {
+  .gallery {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and(max-width: 600px) {
+  .gallery {
+    grid-template-columns: auto;
+  }
+}

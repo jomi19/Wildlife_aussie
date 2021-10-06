@@ -16,7 +16,6 @@ a {
 
 .nav-item {
   transform: translateY(-50%);
-
   margin: 0 1em;
   margin-top: var(--centertop);
   font-size: 1.5em;
@@ -47,7 +46,7 @@ a {
   margin: 0;
   width: 300px;
   transform: translateX(-20%);
-  top: 50px;
+  top: 55px;
   overflow: hidden;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
@@ -68,4 +67,74 @@ a {
 
 .menu-item:hover {
   background-color: rgba($color: black, $alpha: 0.5);
+}
+
+.responsive-nav {
+  display: none;
+  font-size: 2.5em;
+  height: 100%;
+  align-self: center;
+  position: absolute;
+  right: 0.5em;
+  top: 25%;
+  & svg {
+    color: white;
+  }
+}
+
+.white {
+  color: white;
+}
+
+.responsive-dropdown {
+  margin: 10px;
+}
+
+.align-right {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.responsive-links {
+  width: 100%;
+  margin-top: 5rem;
+  font-size: 2rem;
+}
+
+.outer-responsive-dropdown {
+  background-color: #4d4d4d;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 50%;
+  height: 100vh;
+  transition-duration: var(--speed);
+
+  &.show {
+    right: 0;
+  }
+}
+
+@keyframes fromRight {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@media only screen and(max-width: 600px) {
+  .navbar {
+    display: none;
+  }
+
+  .responsive-nav {
+    display: block;
+  }
+
+  .outer-navbar {
+    position: fixed;
+  }
 }
