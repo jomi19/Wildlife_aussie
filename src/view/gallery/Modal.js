@@ -61,8 +61,8 @@ function Modal(props) {
                 <div className="modal">
 
                     <div className="modal-header">
-                        {token ? <DeleteOutline onClick={deleteImage}/> : "inteinloggad"}
-                        <Close  onClick={e => clickHandler("close")}/>  
+                        {token ? <DeleteOutline onClick={deleteImage}/> : ""}
+                        <Close className="close right" onClick={e => clickHandler("close")}/>  
                     </div>
                     {props.children}
                 </div>
